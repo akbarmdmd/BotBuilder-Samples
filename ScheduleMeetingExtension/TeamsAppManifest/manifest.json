@@ -11,8 +11,8 @@
     "termsOfUseUrl": "https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx"
   },
   "name": {
-    "short": "Action Messaging Extension",
-    "full": "Microsoft Teams Action Based Messaging Extension"
+    "short": "Schedule Meeting",
+    "full": "Schedule Meeting in Teams chat/channel"
   },
   "description": {
     "short": "Sample demonstrating an Action Based Messaging Extension",
@@ -20,7 +20,7 @@
   },
   "icons": {
     "outline": "icon-outline.png",
-    "color": "icon-color.png"
+    "color": "icon-meeting.png"
   },
   "accentColor": "#FFFFFF",
   "bots": [
@@ -41,7 +41,7 @@
       "commands": [
         {
           "id": "scheduleMeeting",
-          "description": "Schedule meeting",
+          "description": "Schedule meeting with people in conversation",
           "title": "Schedule Meeting",
           "type": "action",
           "fetchTask": true,
