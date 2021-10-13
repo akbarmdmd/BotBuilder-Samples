@@ -1,4 +1,0 @@
-[generator.lg](../generator.lg)
-
-# generators
-- ${entityLGTemplates('dynamiclist')}
