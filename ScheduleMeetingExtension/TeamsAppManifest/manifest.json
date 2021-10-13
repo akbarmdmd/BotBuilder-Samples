@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
   "manifestVersion": "1.5",
   "version": "1.0",
-  "id": "a1fcf39f-efac-46a4-8ec2-e916cab21e4b",
+  "id": "",
   "packageName": "com.microsoft.teams.samples",
   "developer": {
     "name": "Microsoft",
@@ -25,7 +25,7 @@
   "accentColor": "#FFFFFF",
   "bots": [
     {
-      "botId": "a1fcf39f-efac-46a4-8ec2-e916cab21e4b",
+      "botId": "",
       "needsChannelSelector": false,
       "isNotificationOnly": false,
       "scopes": [
@@ -37,85 +37,8 @@
   ],
   "composeExtensions": [
     {
-      "botId": "a1fcf39f-efac-46a4-8ec2-e916cab21e4b",
+      "botId": "",
       "commands": [
-        {
-          "id": "createCard",
-          "type": "action",
-          "context": [ "compose" ],
-          "description": "Command to run action to create a Card from Compose Box",
-          "title": "Create Card",
-          "parameters": [
-            {
-              "name": "title",
-              "title": "Card title",
-              "description": "Title for the card",
-              "inputType": "text"
-            },
-            {
-              "name": "subTitle",
-              "title": "Subtitle",
-              "description": "Subtitle for the card",
-              "inputType": "text"
-            },
-            {
-              "name": "text",
-              "title": "Text",
-              "description": "Text for the card",
-              "inputType": "textarea"
-            }
-          ]
-        },
-        {
-          "id": "shareMessage",
-          "type": "action",
-          "context": [ "message" ],
-          "description": "Test command to run action on message context (message sharing)",
-          "title": "Share Message",
-          "parameters": [
-            {
-              "name": "includeImage",
-              "title": "Include Image",
-              "description": "Include image in Hero Card",
-              "inputType": "toggle"
-            }
-          ]
-        },
-        {
-          "id": "FetchRoster",
-          "description": "Fetch the conversation roster",
-          "title": "FetchRoster",
-          "type": "action",
-          "fetchTask": true,
-          "context": [ "compose" ]
-        },
-        {
-          "id": "createAdaptiveCard",
-          "type": "action",
-          "context": [ "compose" ],
-          "description": "Command to run action to create a Card from Compose Box",
-          "title": "Adaptive Card",
-          "parameters": [
-            {
-              "name": "title",
-              "title": "Name",
-              "description": "Name of the User",
-              "inputType": "text"
-            },
-            {
-              "name": "subTitle",
-              "title": "Designation",
-              "description": "Designation of the User",
-              "inputType": "text"
-            },
-            {
-              "name": "text",
-              "title": "Description",
-              "description": "Description",
-              "inputType": "textarea"
-            }
-          ]
-        },
         {
           "id": "scheduleMeeting",
           "description": "Schedule meeting",
@@ -123,24 +46,7 @@
           "type": "action",
           "fetchTask": true,
           "context": [ "compose", "message" ]
-        },
-        {
-          "id": "HTML",
-          "description": "Fetch the HTML",
-          "title": "HTML",
-          "type": "action",
-          "fetchTask": true,
-          "context": [ "compose" ]
-        },
-        {
-          "id": "razorView",
-          "description": "Fetch the Razor View",
-          "title": "Razor View",
-          "type": "action",
-          "fetchTask": true,
-          "context": [ "compose" ]
         }
-
       ]
     }
   ],
