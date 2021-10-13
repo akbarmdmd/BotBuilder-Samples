@@ -156,32 +156,47 @@ namespace Microsoft.BotBuilderSamples.Bots
         private MessagingExtensionActionResponse ScheduleMeetingResponse(ITurnContext<IInvokeActivity> turnContext, MessagingExtensionAction action)
         {
             // The user has chosen to create a card by choosing the 'Web View' context menu command.
-            CustomFormResponse cardData = JsonConvert.DeserializeObject<CustomFormResponse>(action.Data.ToString());
-            var imgUrl = baseUrl + "/MSFT_logo.jpg";
-            var card = new ThumbnailCard
-            {
-                Title = "ID: " + cardData.EmpId,
-                Subtitle = "Name: " + cardData.EmpName,
-                Text = "E-Mail: " + cardData.EmpEmail,
-                Images = new List<CardImage> { new CardImage { Url = imgUrl } },
-            };
+            var a = action.Data.ToString();
+            CustomFormResponse data = JsonConvert.DeserializeObject<CustomFormResponse>(a);
 
             var attachments = new List<MessagingExtensionAttachment>();
             attachments.Add(new MessagingExtensionAttachment
             {
-                Content = card,
-                ContentType = ThumbnailCard.ContentType,
-                Preview = card.ToAttachment(),
+                ContentType = AdaptiveCard.ContentType,
+                Content = new AdaptiveCard("1.0")
+                {
+                    Body = new List<AdaptiveElement>()
+                    {
+                      new AdaptiveTextInput() { Id = "title", Value = data.Title, Label = "Title" },
+                      new AdaptiveTextInput() { Id = "attendees", Value = string.Join("; ", data.Attendees), Label = "Attendees" },
+                      new AdaptiveTextInput() { Id = "time", Value = data.Time, Label = "Time" },
+                    },
+                },
             });
 
             return new MessagingExtensionActionResponse
             {
                 ComposeExtension = new MessagingExtensionResult
                 {
-                    AttachmentLayout = "list",
+                    //Type = "botMessagePreview",
+                    //ActivityPreview = MessageFactory.Attachment(new Attachment
+                    //{
+                    //    Content = new AdaptiveCard("1.0")
+                    //    {
+                    //        Body = new List<AdaptiveElement>()
+                    //            {
+                    //            new AdaptiveTextBlock() { Text = "FormField1 value was:", Size = AdaptiveTextSize.Large },
+                    //            new AdaptiveTextBlock() { Text = "Akbar" }
+                    //            }
+                    //    },
+                    //    ContentType = AdaptiveCard.ContentType
+                    //}) as Activity
+                    //Type = "message",
+                    //Text = "Meeting created"
                     Type = "result",
                     Attachments = attachments,
-                },
+                    AttachmentLayout = "list",
+                }
             };
         }
 

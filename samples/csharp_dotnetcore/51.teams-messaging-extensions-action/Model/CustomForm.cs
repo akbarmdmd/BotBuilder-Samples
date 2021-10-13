@@ -2,8 +2,8 @@
 {
     public class CustomFormResponse
     {
-        public string EmpId { get; set; }
-        public string EmpName { get; set; }
-        public string EmpEmail { get; set; }
+        public string Title { get; set; }
+        public string Attendees { get; set; }
+        public string Time { get; set; }
     }
 }
