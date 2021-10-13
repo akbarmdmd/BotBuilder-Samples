@@ -9,6 +9,7 @@
 
 # dotnet core app settings
 /*/appsettings.production.json
+/**/file.patch
 /*/appsettings.development.json
 
 # webapi app settings
