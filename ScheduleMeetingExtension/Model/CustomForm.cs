@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Microsoft.Graph;
+using System;
 
 namespace Microsoft.BotBuilderSamples.Models
 {
     public class CustomFormResponse
     {
         public string Title { get; set; }
-        public string Attendees { get; set; }
-        public string Time { get; set; }
+        public string Organizer { get; set; }
+        public string AttendeeNames { get; set; }
+        public string AttendeeAddresses { get; set; }
+        public DateTime StartTime { get; set; }
+        public string Duration { get; set; }
     }
 
     public class TeamsMessagesData
@@ -25,11 +29,5 @@ namespace Microsoft.BotBuilderSamples.Models
     public class From
     {
         public EmailAddress EmailAddress { get; set; }
-    }
-
-    public class EmailAddress
-    {
-        public string Name { get; set; }
-        public string Address { get; set; }
     }
 }
